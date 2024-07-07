@@ -31,10 +31,20 @@ const App = () => {
     { name: 'Mussoorie', country: 'India' },
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
-    ]
-    
+    ];
+    let count=0;
+    const indList=cityList.filter(item=>item.country=='India');
+    console.log(indList);
   return (
     <div id="main">
+      <ol>
+    {indList.map((item)=>{
+      count++;
+        return(
+        <li key={'location'+count}>{item.name},{item.country}</li>
+        )
+    })}
+    </ol>
                {/* Do not remove the main div */}
     </div>
   )
